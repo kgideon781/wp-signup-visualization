@@ -142,7 +142,7 @@ const SignupTrends = () => {
 
     return (
         <div className="p-4">
-            <h1 className="text-2xl font-bold mb-6 text-center">WordPress User Signup Trends</h1>
+            <h1 className="text-2xl font-bold mb-6 text-center">APHRC CoP User Acquisition Trends 2024 - 2025</h1>
 
             {/* Tab Navigation */}
             <div className="flex justify-center mb-6">
