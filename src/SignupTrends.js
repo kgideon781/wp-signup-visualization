@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {
     LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
-    ResponsiveContainer, ComposedChart, Bar, Area, BarChart
+    ResponsiveContainer, ComposedChart, Bar, BarChart
 } from 'recharts';
 import Papa from 'papaparse';
 
@@ -120,7 +120,7 @@ const SignupTrends = () => {
     const monthlyData2025 = getMonthlyData(data2025);
 
     // Custom tooltip to show date and signups
-    const CustomTooltip = ({ active, payload, label }) => {
+    const CustomTooltip = ({ active, payload}) => {
         if (active && payload && payload.length) {
             return (
                 <div className="bg-white p-4 border border-gray-200 rounded shadow-md">
@@ -136,18 +136,6 @@ const SignupTrends = () => {
     };
 
     // Monthly tooltip
-    const MonthlyTooltip = ({ active, payload, label }) => {
-        if (active && payload && payload.length) {
-            return (
-                <div className="bg-white p-4 border border-gray-200 rounded shadow-md">
-                    <p className="font-semibold">{payload[0].payload.month} {payload[0].payload.monthYear.split('-')[0]}</p>
-                    <p className="text-purple-600">Signups: {payload[0].value}</p>
-                </div>
-            );
-        }
-        return null;
-    };
-
     if (loading) {
         return <div className="text-center p-8">Loading signup data...</div>;
     }
