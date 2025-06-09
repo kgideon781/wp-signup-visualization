@@ -113,6 +113,7 @@ const APHRCAnalyticsDashboard = () => {
         console.log('Active users:', activeUsers.length);
         console.log('Inactive users:', inactiveUsers.length);
         console.log('Activity breakdown:', activityByPeriod);
+        console.log('Activity breakdown:', somaUsers);
 
         // Create daily activity chart data for the last 30 days
         const dailyActivity = [];
@@ -234,7 +235,7 @@ const APHRCAnalyticsDashboard = () => {
         };
 
         fetchData();
-    }, []);
+    }, [analyzeSomaData]);
 
     // Generate monthly data for comparison (existing function)
     const getMonthlyData = (yearData) => {
@@ -301,13 +302,13 @@ const APHRCAnalyticsDashboard = () => {
                     className={`px-6 py-2 mx-2 rounded-lg ${activePlatform === 'cop' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
                     onClick={() => setActivePlatform('cop')}
                 >
-                    Community of Practice
+                    CoP
                 </button>
                 <button
                     className={`px-6 py-2 mx-2 rounded-lg ${activePlatform === 'soma' ? 'bg-green-600 text-white' : 'bg-gray-200'}`}
                     onClick={() => setActivePlatform('soma')}
                 >
-                    Virtual Learning Academy
+                    VLA
                 </button>
             </div>
 
