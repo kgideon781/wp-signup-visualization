@@ -235,7 +235,7 @@ const APHRCAnalyticsDashboard = () => {
         };
 
         fetchData();
-    }, [analyzeSomaData]);
+    }, []);
 
     // Generate monthly data for comparison (existing function)
     const getMonthlyData = (yearData) => {
